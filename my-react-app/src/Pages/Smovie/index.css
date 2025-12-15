@@ -1,0 +1,61 @@
+.sMovie-main-container {
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ------------ MOVIE MAIN SECTION ------------ */
+.Smovie {
+  display: flex;
+  gap: 20px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.smovie-left img {
+  width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.smovie-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.smovie-right h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.smovie-right p {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* ------------ CAST SECTION ------------ */
+.cast-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.cast-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #222;
+}
+
+/* ------------ MODAL defaults (optional) ------------ */
+.modal {
+  background: rgba(0,0,0,0.8);
+}
+

@@ -1,0 +1,17 @@
+button {
+    padding: 10px 20px;
+    background-color: #007bff;   /* simple blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;   /* darker blue on hover */
+}
+
+button:active {
+    transform: scale(0.97);      /* small click effect */
+}
