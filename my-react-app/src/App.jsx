@@ -7,7 +7,7 @@ import useDebounce from './Hooks/useDebounce.js'
 import Loader from "./Components/Loader/index.jsx"
 import Contact from "./Pages/Contact/index.jsx"
 import About from "./Pages/About/index.jsx"
-import Smovie from "./Pages/SMovie/index.jsx"
+import Smovie from "./Pages/Smovie/index.jsx"
 
 
 
