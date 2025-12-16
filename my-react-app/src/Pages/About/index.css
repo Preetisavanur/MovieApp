@@ -1,0 +1,26 @@
+.about-page {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-color: #000;
+    color: white;
+    padding: 40px 60px;
+    box-sizing: border-box;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content h1,
+.about-content h2 {
+    color: #ff3d00;
+}
+
+.about-content ul {
+    padding-left: 20px;
+}
+
+.about-content li {
+    margin-bottom: 8px;
+}

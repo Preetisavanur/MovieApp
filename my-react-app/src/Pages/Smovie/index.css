@@ -59,3 +59,21 @@
   background: rgba(0,0,0,0.8);
 }
 
+/* Modal container */
+.modal {
+  background: rgba(0, 0, 0, 0.958);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; 
+  width: 500px;/* scroll if content too big */
+}
+
+/* Modal content wrapper */
+.modal-content {
+  max-height: 270px; /* reduce height of container */
+  padding: 10px;
+  overflow-y: auto; /* scroll inside if content overflows */
+}
+
+

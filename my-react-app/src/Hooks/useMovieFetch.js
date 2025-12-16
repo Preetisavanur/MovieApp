@@ -1,24 +1,34 @@
-import React,{useState,useEffect} from "react";
-import {axiosCreate} from '../axios'
+import { useState, useEffect } from "react";
+import { axiosCreate } from "../axios";
 
-const useMovieFetch = ({url}) => {
-    const [data, setData] = useState([])
+const useMovieFetch = ({ url }) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    async function fetchData() {
-        const result = await axiosCreate.get(`${url}`,{
-            params:{
-                api_key: '9d38b17f3deabed19968463267264754'
+  useEffect(() => {
+    if (!url) return;
 
-            }
-        })
-        setData(result.data.results || result.data)
-    }
+    const fetchData = async () => {
+      try {
+        setLoading(true);
 
-    useEffect(()=>{
-        fetchData()
-    },[url])
-    return {data}
+        const result = await axiosCreate.get(
+          `${url}&api_key=9d38b17f3deabed19968463267264754`
+        );
 
-}
+        setData(result.data.results || []);
+      } catch (error) {
+        console.error("Fetch error:", error);
+        setData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-export default useMovieFetch
+    fetchData();
+  }, [url]);
+
+  return { data, loading };
+};
+
+export default useMovieFetch;

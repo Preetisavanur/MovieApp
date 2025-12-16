@@ -1,54 +1,36 @@
-/* Navbar container */
+/* FULL-WIDTH BACKGROUND */
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #1b1b1b; /* dark background */
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    background-color: #1b1b1b;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-/* Left side: logo or title */
+/* CONTENT CONTAINER */
+.nav-inner {
+    width: 100%;
+    max-width: none;      /* IMPORTANT */
+    margin: 0;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Left side title */
 .nav-right h2 {
     margin: 0;
     font-size: 1.8rem;
-    color: #ff3d00; /* optional accent color */
+    color: #ff3d00;
 }
 
-/* Right side: search and links */
+/* Right side controls */
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 20px; /* space between items */
-}
-
-/* Search input */
-.nav-left input {
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-}
-
-/* Search button */
-.nav-left button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #ff3d00;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.nav-left button:hover {
-    background-color: #e63600;
+    gap: 20px;
 }
 
 /* Navbar links */
@@ -61,30 +43,31 @@
 }
 
 .nav-links li a {
+    text-decoration: none;
     color: white;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #ff3d00; /* accent color on hover */
+    color: #ff3d00;
 }
 
-/* Responsive: stack navbar on small screens */
+/* Responsive */
 @media (max-width: 768px) {
-    .nav {
+    .nav-inner {
         flex-direction: column;
         align-items: flex-start;
+        gap: 15px;
     }
 
     .nav-left {
         flex-direction: column;
-        gap: 10px;
         width: 100%;
+        align-items: flex-start;
     }
 
     .nav-links {
         flex-direction: column;
-        width: 100%;
     }
 }

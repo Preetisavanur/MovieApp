@@ -65,7 +65,7 @@ const Smovie = () => {
             </div>
 
             <Modal isOpen={trailer !== null} onClose={() => setTrailer(null)} title="Trailer">
-                {trailer && <Youtube height='390' width='640' videoId={trailer} />}
+                {trailer && <Youtube height="390" width="640" videoId={trailer} />}
             </Modal>
         </div>
     );

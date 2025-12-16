@@ -1,34 +1,34 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useMovieFetch from "../Hooks/useMovieFetch";
-import './index.css';
+import "./index.css";
 
-const Index = ({ url }) => {
-    const navigate = useNavigate();       
-    const { data, loading } = useMovieFetch({ url });
+const index = ({ url, title }) => {
+  const navigate = useNavigate();
+  const { data, loading } = useMovieFetch({ url });
 
-    if (loading) {
-        return (
-            <div className="loader">
-                <div className="spinner"></div>
-            </div>
-        );
-    }
-
+  if (loading) {
     return (
-        <div className="card">
-            {data.map((item) => (
-                <img
-                    onClick={() => navigate(`/movie/${item.id}`)}  // ✅ navigate works now
-                    key={item.id}
-                    height="300px"
-                    width="250px"
-                    src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
-                    alt={item.title}
-                />
-            ))}
-        </div>
+      <div className="loader">
+        <div className="spinner"></div>
+      </div>
     );
+  }
+
+  return (
+    <div className="card">
+      {data.map((item) => (
+        <img
+          key={item.id}
+          height="300px"
+          width="250px"
+          src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+          alt={item.title || item.name}
+          onClick={() => navigate(`/movie/${item.id}`)}
+        />
+      ))}
+    </div>
+  );
 };
 
-export default Index;
+export default index;
